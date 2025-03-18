@@ -14,10 +14,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+
         findViewById<Button>(R.id.rollDiceButton).apply{
             setOnClickListener{
                 (supportFragmentManager
-                    .findFragmentById(R.id.fragmentContainerView) as DieFragment).throwDie()
+                    .findFragmentById(R.id.fragmentContainerView) as DieFragment).apply {
+                    throwDie()
+                }
 
             }
         }
