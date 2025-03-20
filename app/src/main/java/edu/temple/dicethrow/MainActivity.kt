@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         findViewById<Button>(R.id.rollDiceButton).apply{
             setOnClickListener{
                 (supportFragmentManager
