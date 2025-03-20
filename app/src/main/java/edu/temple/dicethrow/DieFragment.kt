@@ -23,7 +23,7 @@ class DieFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let { it.getInt(DIESIDE).run { dieSides = this } }
 
-        dieViewModel = ViewModelProvider(this)[DieViewModel::class.java]
+        dieViewModel = ViewModelProvider(requireActivity())[DieViewModel::class.java]
 
     }
 
