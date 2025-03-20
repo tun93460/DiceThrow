@@ -21,11 +21,7 @@ class DieFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            it.getInt(DIESIDE).run {
-                dieSides = this
-            }
-        }
+        arguments?.let { it.getInt(DIESIDE).run { dieSides = this } }
 
         dieViewModel = ViewModelProvider(this)[DieViewModel::class.java]
 
@@ -49,11 +45,8 @@ class DieFragment : Fragment() {
         }
 
         if (dieViewModel.getDieNumber().value == null)
-            throwDie()
+            dieViewModel.rollDie()
     }
 
 
-    fun throwDie() {
-        dieViewModel.setDieNumber(Random.nextInt(dieSides)+1)
-    }
 }
